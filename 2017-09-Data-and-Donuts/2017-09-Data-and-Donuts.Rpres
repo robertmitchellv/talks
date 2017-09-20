@@ -1,0 +1,317 @@
+Ex-nihilo data analysis; getting up and running with limited resources
+========================================================
+author: Robert Mitchell | @robertmitchellv
+date: 2017-09-20
+autosize: true
+font-import: https://fonts.googleapis.com/css?family=Roboto:300,400,700
+font-family: "Roboto"
+css: ../custom.css
+
+```{r setup, include=FALSE}
+opts_chunk$set(cache=TRUE)
+
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(printr))
+suppressPackageStartupMessages(library(plotly))
+```
+
+~/$  whoami
+========================================================
+incremental: true
+
+![img](../srht.png)
+
+***
+
++ I work at Skid Row Housing Trust as a data analyst
++ (I'll just refer to it as SRHT from now on)
++ I have been working in this role for around a year and a half
++ I am self taught as a programmer/analyst
++ Background in philosophy, comp lit, french, information science
+
+
+A bit about SRHT
+========================================================
+incremental: true
+
+![img](../gifs/star.jpg)
+
+***
+
++ We do three things:
+  1. ~~Develop affordable housing; specifically permanent affordable housing~~
+  2. ~~Provide supportive services to the residents of our affordable building projects~~
+  3. ~~Manage the properties, repairs, rehabilitations, et cetera~~
+
+
+A bit about SRHT
+========================================================
+incremental: true
+
+![img](../gifs/crest.jpg)
+
+***
+
++ We believe in the Housing First model
++ We believe in Harm Reduction
+
+
+What I'm going to talk about
+========================================================
+incremental: true
+
+> The idea is to offer some perspective from my experience getting a new data collection process off the ground.  I am working on my own at SRHT, so this means that from conception of the idea to the dashboard communicating the results, I was responsible for the project.  This was a crash course and there were crashes.
+
+
+What I want to cover
+========================================================
+incremental: true
+
++ Five kinds of questions you ask yourself when you're in over your head
+  1. What do I do if I don't actually have any data?
+  2. What could I even collect?
+  3. Stakeholder buy in: why should others reorient a data collection process?
+  4. How to communicate the results?
+  5. How to circle back to the stakeholders?
+
+
+Again, how did I learn this?
+========================================================
+incremental: true
+<br>
+<center>
+# ~~THE HARD WAY!~~
+# `r emo::ji("sob")`
+</center>
+
+
+What do I do if I don't actually have any data?
+========================================================
+<br>
+<center>
+<img src="../gifs/delete-computer.gif" style="width:22em;">
+</center>
+
+
+What do I do if I don't actually have any data?
+========================================================
+incremental: true
+
+### ~~This is not necesarily fair; often there is lots of data you have access to if you look around; however, often the data you need to answer a fundamental question--that data--doesn't yet exit for you until you go collect it~~
+
+
+Some examples
+========================================================
+incremental: true
+
++ Lots of tables of things; nothing that is connected by keys or can be aggregated meaningfully
++ Data that is lost on paper somewhere or in excel in a lonely, forgotten directory
++ `r emo::ji("bulb")` are there mandatory reports required through some compliance function?
+  + ~~Is this even useful? What does it communicate?~~
+  + ~~Yeah you HUD mandated Annual Progress Report (APR) `r emo::ji("eyes")`~~
++ Is there research literature? What is cited in those studies?
+  + ~~Are there comparisons to draw? Can you chase the citations?~~
+
+
+What could I even collect?
+========================================================
+<br>
+<center>
+<img src="../gifs/mainframe.gif" style="width:14em;">
+</center>
+
+
+What could I even collect?
+========================================================
+incremental: true
+
+### ~~This is not an easy position to be in; if it is falling on you to do the evaluative work, the coding, building, web app maintenance, data engineering, and project management; it's enough to stir some overwhelming panic but ultimately you're there because you want to make meaningful change~~
+
+
+What could I even collect?
+========================================================
+incremental: true
+
++ What _is_ collected in the literature? 
+  + ~~i.e., don't reinvent the wheel~~
++ Are there federal funding agencies that have recommendations or best practices?
++ Who is doing what in the community? Is there momentum in a specific direction?
++ Seek _lots_ of advise
+  + ~~read: _solicit_ if you have to~~
+ 
+
+Stakeholder buy in: why should others reorient a data collection process?
+========================================================
+<br>
+<center>
+<img src="../gifs/help.gif" style="width:13em;">
+</center>
+
+
+Stakeholder buy in: why should others reorient a data collection process?
+========================================================
+incremental: true
+
+### ~~It isn't easy being the person that suggests more work for people that already feel overwhelmed and have difficult positions already.  It's one thing to convince managers and executives of the value that comes from data, but with front line staff that will largely act as the ones entering data; this is not quite as simple~~
+
+
+Stakeholder buy in: why should others reorient a data collection process?
+========================================================
+incremental: true
+
++ Changing an intake process, paperwork for files, questions staff are familiar with is not an easy ask
++ Try to think about their role and whether or not the data you want can measurably improve their workflow
++ Is there a clear connection between new data collection processes and what you're working toward?
+  + ~~I'm sorry that there is no silver bullet here `r emo::ji("cry")`~~
+ 
+
+How to communicate the results
+========================================================
+<br>
+<center>
+<img src="../gifs/pie-chart.jpg" style="width:13em">
+</center>
+
+
+How to communicate the results
+========================================================
+incremental: true
+
+### ~~First, no pie charts.  Second, communicating the data is not always an intuative proces for many folks.  Fortunately there are great tools that help ease the frustrations along~~
+
+
+How to communicate the results
+========================================================
+incremental: true
+
++ This reduces to tooling pretty quickly
+  + ~~Which is deeply personal territory for some folks!~~
++ I will say that I am in favor of tools that help you as a dev or analyst quickly go from prototype to report quickly
++ Personally I'm a fan of `shiny`, `plotly`, and `ggplot2`
+  + ~~These tools are open source, have robust APIs, and allow one person to accomplish a ton on their own `r emo::ji("+1")`~~
+
+
+Tying things back to stakeholders
+========================================================
+incremental: true
+
++ Now that data has gone through a process of being designed, collected, cleaned, analyzed, and communicated; it's time to figure out how to enable stakeholders with the work they've participated in collecting
++ This is about weaving things together and tying them up, which really should amplify the rational/narrative of the project
+
+
+My experience
+========================================================
+incremental: true
+
+### ~~So this is my story walking through the same process I described and where and how some of those ideas came about~~
+
+
+The kind of data I inherited
+========================================================
+incremental: true
+
++ Are you familiar with HMIS?
+  + `r emo::ji("sob")`
++ Are you familiar with HUD?
+  + `r emo::ji("sob")`
++ Are you familiar with trackers?
+  + `r emo::ji("sob")`
+
+
+The kind of data I inherited
+========================================================
+incremental: true
+
+### ~~There were bits and pieces that could be useful in some contexts, but in order to answer important questions the data were not condusive to even describe what happens when someone enters housing from homelessness~~
+
+
+Formulating what I would recommend we collect
+========================================================
+incremental: true
+
++ For all you grad schoolers; you review the `r emo::ji("poop")` out of the literature
++ In my case I was able to leverage some of the recommendations from the Substance Abuse and Mental Health Administration (SAMHSA) as a starting point
+  + ~~For you public health folks: specifically the Screen Brief Intervention Referral to Treatment (SBIRT) grants that used a robust screening tool in outpatient settings, which was a great starting point~~
++ I fell back on connections both the organization and I had with the RAND corporation for feedback/guidance
+  + ~~Look to your network for support~~
+
+
+Formulating what I would recommend we collect
+========================================================
+incremental: true
+<br>
++ World Health Organization Disability Assessment Schedule 2.0
++ Modified Colorado Symptom Index
++ Patient Health Questionnaire
++ Generalized Anxiety Disorder
++ Hospital Social Functioning Questionnaire
+
+***
+
++ PTSD Checklist (Civilian)
++ Slapped, Threatened, and Throw
++ Hurt, Insulted, Threatened with Harm, and Screamed
++ Suicide Behaviors Questionnaire-Revised
++ Alcohol Use Disorders Identification Test
++ Drug Abuse Screening Test
+
+Formulating what I would recommend we collect
+========================================================
+incremental: true
+
+### ~~If anyone is familiar with the tools above, these are not use diagnostically; rather, they're used as point in time psychometrics so we can see longitudinally how people are faring in housing~~
+
+
+Convincing departments of people to help you help themselves
+========================================================
+incremental: true
+
++ I framed the work I wanted to do by describing how answering questions about outcomes or performance were, at the time, not possible
++ This meant: _change something or fall behind_
+  + ~~Different departments have different goals, but ultimately the mission of the organizations should unite people to work toward the greater good~~
++ Explain that programmatic data is a work product; that we ensure efficacy by enabling people to memorialize their work
+
+
+Convincing departments of people to help you help themselves
+========================================================
+incremental: true
+
++ It helped me that I had worked in a similar role when I first started, which gave me a lot of context about the more challenging issues the organization was facing in providing robust outcomes rooted in real analysis
++ This remains a challenge.
+  + ~~Don't give up!~~
+
+
+How to communicate results
+========================================================
+incremental: true
+
++ I find using `shiny` as a data explorer to be useful in communicating data to internal consumers of the data
++ In conjunction with `plotly` report consumers are able to interactively change the plots, which is less work I have to do filtering or removing categories from counts of things
+
+How to communicate results
+========================================================
+incremental: true
+
+### ~~Let's take a quick look at a forward facing dashboard that looks at the aggregate of results (no PII)~~
+
+
+Not leaving stakeholders in the dust
+========================================================
+incremental: true
+
++ Effectively, this is a very big challenge because it is extremely difficult to circle back after feeling finished with work
++ Nevertheless, the staff that are responsible for data collection (in this case) should be invested because they find value in the final product
+  + ~~If they do not understand the final product, that causes problems~~
+
+
+Thank You!
+========================================================
+incremental: true
+
+<center>
+# `r emo::ji("pray")`
+### ~~Questions?~~
+</center>
+
+
+
