@@ -1,0 +1,70 @@
+---
+title: "Data Infrastructure or:"
+subtitle: "How I Learned to Stop Worrying and Love the tooling"
+author: "Robert Mitchell @robertmitchellv"
+date: "2018-08-22"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css]
+    transition: slide
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: clear
+background-image: ![]("www/star-01")
+
+---
+class: clear
+
+## `~ whoami`
+
+.center[![zoolander](https://media.giphy.com/media/C7olQswvzSwAE/giphy.gif)]
+
+---
+class: clear, center, middle
+background-image: url("img/)
+# Why this fellowship?
+
+---
+class: inverse, center, middle
+
+# Mentorship
+
+---
+class: center, middle
+
+# Where did my mentors come from?
+
+`r anicon::faa("twitter", grow = 150, animate = "spin")`
+`r anicon::faa("twitter", grow = 150, animate = "spin", color = "#54565b")`
+`r anicon::faa("twitter", grow = 150, animate = "spin", color = "#F5841F")`
+
+---
+class: clear
+
+background-image: url("img/oreally.jpg")
+
+---
+
+# Delusions of grandeur 
+
+.center[![homer](https://media.giphy.com/media/5b4sNsIbmmLJe/giphy.gif)]
+
+---
+class: inverse, center, middle
+
+# Impact
+
+---
+class: center
+
+`r emo::ji("pray")`
+Thank you to my mentors!
