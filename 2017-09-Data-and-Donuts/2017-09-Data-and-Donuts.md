@@ -3,8 +3,6 @@ Ex-nihilo data analysis; getting up and running with limited resources
 author: Robert Mitchell | @robertmitchellv
 date: 2017-09-20
 autosize: true
-font-import: https://fonts.googleapis.com/css?family=Roboto:300,400,700
-font-family: "Roboto"
 css: ../custom.css
 
 
@@ -13,7 +11,7 @@ css: ../custom.css
 ========================================================
 incremental: true
 
-![img](../srht.png)
+![img](../img/srht.png)
 
 ***
 
@@ -28,7 +26,7 @@ A bit about SRHT
 ========================================================
 incremental: true
 
-![img](../gifs/star.jpg)
+![img](../img/star.jpg)
 
 ***
 
@@ -42,7 +40,7 @@ A bit about SRHT
 ========================================================
 incremental: true
 
-![img](../gifs/crest.jpg)
+![img](../img/crest.jpg)
 
 ***
 
@@ -163,7 +161,7 @@ How to communicate the results
 ========================================================
 <br>
 <center>
-<img src="../gifs/pie-chart.jpg" style="width:13em">
+<img src="../img/pie-chart.jpg" style="width:13em">
 </center>
 
 

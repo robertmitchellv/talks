@@ -28,11 +28,21 @@
 }
 
 /*
+ * fira sans + condensed
+ */
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:300,400,700,900|Fira+Sans:300,400,700'); 
+
+/*
+ * fira code
+ */
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css);
+
+/*
  * Solarized Dark 
  * http://ethanschoonover.com/solarized
  */
 
-pre, code { font-family: 'Roboto Mono', monospace ; font-weight: 300; }
+pre, code { font-family: "Fira Code", monospace; font-weight: 300; }
 pre { background-color: var(--base03); color: var(--base1); }
 code.sourceCode .kw { color: var(--blue); font-weight: 700; } /* Keyword */
 code.sourceCode .dt { color: var(--cyan); } /* DataType */
@@ -58,9 +68,14 @@ code.sourceCode .op { color: var(--yellow); } /* Operator */
 code.sourceCode .bu { color: var(--blue); } /* BuiltIn */
 code.sourceCode .ex { } /* Extension */
 
-.reveal {
-  font-family: Glober;
-  font-weight: 100;
+.reveal h1, 
+.reveal h2, 
+.reveal h3, 
+.reveal h4, 
+.reveal h5, 
+.reveal h6 {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 900;
 }
 
 .reveal .progress span {
@@ -80,18 +95,8 @@ code.sourceCode .ex { } /* Extension */
   color: var(--ruby);
 }
 
-.reveal h1, 
-.reveal h2, 
-.reveal h3, 
-.reveal h4, 
-.reveal h5, 
-.reveal h6 {
-  word-wrap: normal;
-  font-weight: 700;
-}
-
 .reveal blockquote {
-  background: var(--light-grey);
+  background: var(--light-blue);
 }
 
 .section .reveal .state-background {
@@ -131,6 +136,7 @@ code.sourceCode .ex { } /* Extension */
 }
 
 .reveal li:before {
+  font-family: "Fira Code";
   content: "->";
   padding-right: 8px;
 }
