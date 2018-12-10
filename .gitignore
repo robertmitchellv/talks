@@ -6,3 +6,7 @@
 
 # Personal ignores
 scratch*.*
+
+# macOS related
+.DS_Store
+*/.DS_Store
